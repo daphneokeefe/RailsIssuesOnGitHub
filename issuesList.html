@@ -1,0 +1,91 @@
+<!DOCTYPE html lang="en">
+<html>
+ 	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="author" content="Daphne O'Keefe">
+		<link rel="stylesheet" href="style/stylesheet.css" >
+		<!--<link rel="stylesheet" href="style/blackStyle.css" > -->
+		<link rel="icon" type="image/x-icon" href="https://assets-cdn.github.com/favicon.ico">
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>   
+
+  		<!-- Ideally, templates should reside in external files, perhaps called with require.js. -->
+		<script id="list" type="text/template">
+			<header>
+				Open Issues in Rails GitHub
+			</header>
+	  		<ul class="curl">
+				<% model.each(function(issue) { %>
+					<li class="issueItem">
+						<a href="#issue/<%= issue.id %>">
+							<table>
+								<tr>
+									<td>
+										<image class="reporterImage" src=<%= issue.get('user').avatar_url %> title=<%= issue.get('user').login%>>
+									</td>
+									<td>
+										<div class="issueHeader">
+											<span>Issue <%= issue.get('number') %> </span>&nbsp;&nbsp;
+											<span class="issueTitle"><%= issue.get('title') %></span>
+										</div>
+										<div><%= issue.get('body') %></div>
+										<div class="issueUser right">Reported by: <%= issue.get('user').login %></div>
+									</td>
+								</tr>
+							</table>
+						</a>
+				  	</li>
+				<% }) %>
+			</ul>
+		</script>
+		<script id="detail" type="text/template">
+			<div class="backButton"><a  href="#">< Back to list</a></div>
+		  	<div id="issueDetail">
+				<ul class="curl">
+			  		<li>
+						<div class="issueHeader">
+				  			<span>Issue <%= model.get('number') %> </span>
+				  			<span class="issueTitle"><%= model.get('title') %></span>
+			  			</div>
+			  			<div>
+				  			<image class="reporterImage" title=<%= model.get('user').login %> src=<%= model.get('user').avatar_url %>>
+						</div>
+			  			<div class="left">
+							<span class="issueUser">Reported by: <%= model.get('user').login %></span>
+			  			</div>
+						<div class="issueState right">
+				  			State: <%= model.get('state') %>
+						</div>
+						<br class="clear">
+						<div class="issueBody">
+							<%= model.get('body') %>
+						</div>	
+						<div id="commentList"></div>				
+				  	</li>
+				</ul>
+		  	</div>
+		</script>
+		<script id="comment" type="text/template">
+			<p class="commentHeader">Comments:</p>
+			<% model.each(function(comment) { %>
+				<div class="commentItem">
+					<div><span class="issueUser"><%= comment.get('commenter') %></span> : <%= comment.get('body') %></div>
+					<br >
+					<div class="right"> <%= comment.get('date') %></div>
+					<br class="clear">
+				</div>
+			<% }) %>
+		</script>
+  	</head>
+  	<body>
+		<div class="pageContainer">
+	  		<div id="content">Loading... Please Wait</div>
+		</div>
+
+		<script src="script/underscore.js"></script>
+		<script src="script/jquery-1.11.1.min.js"></script>
+		<script src="script/backbone.js"></script> 
+		<script src="script/modernizr-2.8.2.js"></script>   
+		<script src="script/script.js"></script>
+  	</body>
+</html>

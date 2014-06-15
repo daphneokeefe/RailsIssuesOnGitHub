@@ -1,0 +1,161 @@
+a {
+	color: #000;
+}
+
+body {
+	color: #000;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 14px;
+	margin: 0;
+
+}
+
+header {
+	background-color: #16a085;
+	color: #fff;
+	font-family: Georgia, serif;
+	font-weight: bold;
+	font-size: 2em;
+	margin-bottom: 1em;
+	padding: 1.2em;
+	text-align: center;
+}
+
+table {
+	padding: 1em;
+	width: 100%;
+}
+
+td {
+	vertical-align: top;
+}
+
+.backButton {
+	margin: 2em 0;
+}
+
+.backButton a {
+	background-color: #16a085;
+	color: #fff;
+	padding:.5em  1em;
+	text-decoration: none;
+}
+
+.clear {
+	clear: both;
+}
+
+.commentHeader {
+	font-style: italic;
+	font-weight: bold;
+}
+
+.commentItem {
+	border: solid 1px #ddd;
+	margin: 1em;
+	padding: 1em;
+}
+
+.issueBody {
+	border: solid 1px #ddd;
+	margin: 2em 1em;
+	padding: 2em;
+	width: 750px;	
+}
+
+.issueHeader {
+	margin-bottom: 1em;
+}
+
+.issueItem {
+	padding: 2em;
+	width: 750px;	
+}
+
+.no-touch .issueItem:hover {
+	background-color: #f0ffff;
+}
+
+.issueState {
+	padding-right: 2em;
+}
+
+.issueTitle {	
+	color: #16a085;
+	font-weight: bold;
+	font-size: 1.2em;
+	font-style: italic;
+}
+
+.issueUser {
+	font-style: italic;
+	margin-top: 1em;
+}
+
+.left {
+	float: left;
+}
+
+.pageContainer {
+	margin: 0 auto;
+	max-width: 775px;
+}
+
+.reporterImage {
+	border-radius: 5px;
+	height: 48px; 
+	margin-right: 2em;
+	width: 48px; 
+}
+
+.right {
+	float:right;
+}
+
+/* BEGIN page curl effect */
+	ul.curl {
+		position: relative;
+		z-index: 1;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	ul.curl li {
+		position: relative;
+		float: left;
+		padding: 10px;
+		border: 1px solid #efefef;
+		margin: 10px 0;
+		background: #fff;
+		box-shadow: 0 1px 4px rgba(0, 0, 0, 0.27), 0 0 40px rgba(0, 0, 0, 0.06) inset;
+		text-align:left;
+	}
+
+	ul.curl li:before,
+	ul.curl li:after {
+		content: '';
+		z-index: -1;
+		position: absolute;
+		left: 10px;
+		bottom: 10px;
+		width: 70%;
+		max-width: 300px;
+		max-height: 100px;
+		height: 55%;
+		box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+		-webkit-transform: skew(-15deg) rotate(-6deg);
+		transform: skew(-15deg) rotate(-6deg);
+	}
+
+	ul.curl li:after {
+		left: auto;
+		right: 10px;
+		-webkit-transform: skew(15deg) rotate(6deg);
+		transform: skew(15deg) rotate(6deg);
+	}
+
+.ui-li-desc {							
+	white-space:normal;			
+}
+/* END page curl effect */
